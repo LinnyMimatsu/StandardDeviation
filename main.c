@@ -9,9 +9,65 @@
 #include <stdlib.h>
 #include <math.h>
 
+/*Function declaration*/
+int arrSize();
+void standardDeviation(int arrSize);
 
 
+/*main function*/
 int main(void) {
 
+    int size = arrSize();
+
+    standardDeviation(size);
+
     return 0;
+}
+
+/*Asks the user to set the array size*/
+int arrSize() {
+    int arrSize;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &arrSize);
+
+    return arrSize;
+
+}
+
+
+/*Function calculates the average for the standard deviation and prints it
+ * to the user
+ */
+void standardDeviation(int arrSize) {
+    float avg = 0, stDeviation = 0;
+    float* arr = (float*) calloc (arrSize, sizeof(float));
+
+    for (int i = 0; i < arrSize; i++) {
+
+        printf("Element %d: ", i + 1);
+        scanf("%f", &arr[i]);
+
+    }
+
+    for (int i = 0; i < arrSize; i++) {
+
+        avg += arr[i];
+
+    }
+
+    avg /= (float)arrSize;
+
+    for (int i = 0; i < arrSize; i++) {
+
+    stDeviation += (float)pow(arr[i] - avg, 2);
+
+    }
+
+    stDeviation = (float)sqrt(stDeviation / (float)arrSize);
+
+    printf("Standard Deviation: %.2f", stDeviation);
+
+    /*cleans up the ram after the program is done running*/
+    free(arr);
 }

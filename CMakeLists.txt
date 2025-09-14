@@ -4,3 +4,5 @@ project(StandardDeviation C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(StandardDeviation main.c)
+
+target_link_libraries(StandardDeviation m)
