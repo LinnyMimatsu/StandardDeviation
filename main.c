@@ -50,21 +50,20 @@ void standardDeviation(int arrSize) {
 
     }
 
+    /*Calculates the average*/
     for (int i = 0; i < arrSize; i++) {
-
         avg += arr[i];
-
     }
-
     avg /= (float)arrSize;
 
+    /*calculates the inside of the standard deviation*/
     for (int i = 0; i < arrSize; i++) {
-
     stDeviation += (float)pow(arr[i] - avg, 2);
-
     }
 
+    /*calculates everything in the square root*/
     stDeviation = (float)sqrt(stDeviation / (float)arrSize);
+
 
     printf("Standard Deviation: %.2f", stDeviation);
 
