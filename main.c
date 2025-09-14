@@ -62,7 +62,7 @@ void standardDeviation(int arrSize) {
     }
 
     /*calculates everything in the square root*/
-    stDeviation = (float)sqrt(stDeviation / (float)arrSize);
+    stDeviation = sqrt(stDeviation / (float)(arrSize - 1));
 
 
     printf("Standard Deviation: %.2f", stDeviation);
