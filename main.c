@@ -40,7 +40,7 @@ int arrSize() {
  * to the user
  */
 void standardDeviation(int arrSize) {
-    float avg = 0, stDeviation = 0;
+    float avg = 0, stdDeviation = 0;
     float* arr = (float*) calloc (arrSize, sizeof(float));
 
     for (int i = 0; i < arrSize; i++) {
@@ -58,14 +58,14 @@ void standardDeviation(int arrSize) {
 
     /*calculates the inside of the standard deviation*/
     for (int i = 0; i < arrSize; i++) {
-    stDeviation += (float)pow(arr[i] - avg, 2);
+    stdDeviation += (float)pow(arr[i] - avg, 2);
     }
 
     /*calculates everything in the square root*/
-    stDeviation = sqrt(stDeviation / (float)(arrSize - 1));
+    stdDeviation = sqrt(stdDeviation / (float)(arrSize - 1));
 
 
-    printf("Standard Deviation: %.2f", stDeviation);
+    printf("Standard Deviation: %.2f", stdDeviation);
 
     /*cleans up the ram after the program is done running*/
     free(arr);
